@@ -11,14 +11,19 @@ export default {
       name: "Md Mohimenol Islam",
       type: "Front End Developer",
       stackName: "React js, Vus js, Nuxt js",
-      jobExperience: 1,
+      jobExperience: 10,
     }
   },
   methods: {
     nameChangeHandler(nameArg) {
       console.log("name change handler : ", nameArg);
       this.name = nameArg;
+    },
+    increamentJobExperienceHandler() {
+      console.log("increament Job Experience Handler");
+      this.jobExperience++;
     }
+
   },
 }
 </script>
@@ -31,14 +36,9 @@ export default {
     <button v-on:click="nameChangeHandler('Md Ifti')" style="margin-right: 10px;">
       Click To Chanage Name
     </button>
-
-    <button @click="nameChangeHandler('New Md Ifti')">
-      Again Click To Chanage Name
-    </button>
-
-
     <div>
-      <Developer :name="name" :type="type" :stack-name="stackName" :job-experience="jobExperience" />
+      <Developer :name="name" :type="type" :stack-name="stackName" :job-experience="jobExperience"
+        :nameChangeHandler="nameChangeHandler" @increament-job-experience-handler="increamentJobExperienceHandler" />
     </div>
   </div>
 </template>
