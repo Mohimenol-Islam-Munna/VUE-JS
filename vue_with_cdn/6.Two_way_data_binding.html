@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>learning vue js</title>
+    <script src="vue.js"></script>
+    <style>
+      .one {
+        background-image: linear-gradient(
+          to left,
+          rgba(240, 15, 15, 0.5),
+          rgba(17, 17, 238, 0.5)
+        );
+        margin: auto;
+        padding-left: 40px;
+        padding-top: 20px;
+        width: 30%;
+        height: 200px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Two Way Data Binding</h1>
+
+    <!--applying vue-->
+    <div class="app">
+      <h3>{{ name }}</h3>
+      <br />
+      <br />
+      <input type="text" v-model="name" />
+    </div>
+
+    <script>
+      new Vue({
+        el: ".app",
+        data: {
+          name: "Md mohimenol",
+        },
+      });
+    </script>
+  </body>
+</html>

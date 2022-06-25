@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- one way  -->
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <!-- others way  -->
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="app">
+      <h2>Title : {{message}}</h2>
+      <button @click="incrementCount()">Click Me {{count}}</button> <br />
+
+      <button @click="incrementFive(5)">Add Five  {{countTwo}}</button>
+
+    </div>
+
+    <script type="module">
+      //   const { createApp } = Vue;
+
+      import { createApp } from "vue";
+
+      createApp({
+        data() {
+          return {
+            message: "Hello Vue js World!!",
+            count: 0,
+            countTwo: 5, 
+          };
+        },
+        methods: {
+          incrementCount() {
+            this.count++;
+          },
+
+          incrementFive(num){
+
+            console.log("incrementCount method num :", num);
+
+
+            this.countTwo = this.countTwo + num;
+          }
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
