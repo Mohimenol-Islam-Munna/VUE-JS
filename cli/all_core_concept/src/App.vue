@@ -1,9 +1,17 @@
-<script >
+<script>
 import Developer from "./components/Developer.vue";
+import Cricketer from "./components/Cricketer.vue";
+import Footballer from "./components/Footballer.vue";
+import Contact from "./components/Contact.vue";
+import About from "./components/About.vue";
 
 export default {
   components: {
-    Developer
+    Developer,
+    Cricketer,
+    Footballer,
+    Contact,
+    About,
   },
 
   data() {
@@ -12,7 +20,7 @@ export default {
       type: "Front End Developer",
       stackName: "React js, Vus js, Nuxt js",
       jobExperience: 10,
-    }
+    };
   },
   methods: {
     nameChangeHandler(nameArg) {
@@ -22,23 +30,77 @@ export default {
     increamentJobExperienceHandler() {
       console.log("increament Job Experience Handler");
       this.jobExperience++;
-    }
-
+    },
   },
-}
+};
 </script>
 
-
 <template>
-  <div style="width: 50%; margin: auto; border: 2px solid salmon; padding: 20px; border-radius: 15px;">
-    <h2>Welcome {{ name }} to Vue js world!!</h2>
+  <div
+    style="
+      width: 50%;
+      margin: auto;
+      border: 2px solid salmon;
+      padding: 20px;
+      border-radius: 15px;
+    "
+  >
+    <!-- header  -->
+    <header
+      style="
+        display: flex;
+        justify-content: space-around;
+        background-color: salmon;
+        padding: 20px 0px;
+      "
+    >
+      <div>
+        <router-link to="/developer">Developer</router-link>
+      </div>
+      <div>
+        <router-link to="/cricketer">Cricketer</router-link>
+      </div>
+      <div>
+        <router-link to="/footballer">Footballer</router-link>
+      </div>
 
-    <button v-on:click="nameChangeHandler('Md Ifti')" style="margin-right: 10px;">
-      Click To Chanage Name
-    </button>
+      <div>
+        <router-link to="/contact">Contact</router-link>
+      </div>
+
+      <div>
+        <router-link to="/about">About</router-link>
+      </div>
+    </header>
+
+    <!-- content  -->
     <div>
-      <Developer :name="name" :type="type" :stack-name="stackName" :job-experience="jobExperience"
-        :nameChangeHandler="nameChangeHandler" @increament-job-experience-handler="increamentJobExperienceHandler" />
+      <h2>Welcome {{ name }} to Vue js world!!</h2>
+
+      <button
+        v-on:click="nameChangeHandler('Md Ifti')"
+        style="margin-right: 10px"
+      >
+        Click To Chanage Name
+      </button>
+      <div>
+        <Developer
+          :name="name"
+          :type="type"
+          :stack-name="stackName"
+          :job-experience="jobExperience"
+          :nameChangeHandler="nameChangeHandler"
+          @increament-job-experience-handler="increamentJobExperienceHandler"
+        />
+
+        <div style="border: 2px solid palegreen; margin-top: 30px">
+          <router-view></router-view>
+        </div>
+        <!-- <Cricketer />
+        <Footballer />
+        <Contact />
+        <About /> -->
+      </div>
     </div>
   </div>
 </template>
