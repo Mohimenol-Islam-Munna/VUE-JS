@@ -1,7 +1,10 @@
 import { createApp } from "vue";
 import { createRouter, createWebHashHistory } from "vue-router";
+import { createPinia } from "pinia";
 
 import App from "./App.vue";
+
+// components
 import Developer from "../src/components/Developer.vue";
 import Cricketer from "../src/components/Cricketer.vue";
 import Footballer from "../src/components/Footballer.vue";
@@ -37,5 +40,7 @@ const router = createRouter({
 });
 
 const app = createApp(App);
+
+app.use(createPinia());
 app.use(router);
 app.mount("#app");

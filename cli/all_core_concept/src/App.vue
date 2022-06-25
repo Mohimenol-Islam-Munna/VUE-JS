@@ -1,4 +1,7 @@
 <script>
+// store
+import { useCounterStore } from "../src/stores/useCounterStore.js";
+
 import Developer from "./components/Developer.vue";
 import Cricketer from "./components/Cricketer.vue";
 import Footballer from "./components/Footballer.vue";
@@ -6,6 +9,14 @@ import Contact from "./components/Contact.vue";
 import About from "./components/About.vue";
 
 export default {
+  setup() {
+    const store = useCounterStore();
+
+    return {
+      store,
+    };
+  },
+
   components: {
     Developer,
     Cricketer,
@@ -75,6 +86,10 @@ export default {
 
     <!-- content  -->
     <div>
+      <h2>Pinia Store</h2>
+      <p>Counter value :: {{ store.counter }}</p>
+      <button @click="store.increment">Increment Counter Store</button>
+
       <h2>Welcome {{ name }} to Vue js world!!</h2>
 
       <button
