@@ -8,6 +8,9 @@ import Footballer from "./components/Footballer.vue";
 import Contact from "./components/Contact.vue";
 import About from "./components/About.vue";
 
+// composition api
+import AlternativeOfDataMethodsVue from "./components/compositionApi/AlternativeOfDataMethods.vue";
+
 export default {
   setup() {
     const store = useCounterStore();
@@ -23,6 +26,7 @@ export default {
     Footballer,
     Contact,
     About,
+    AlternativeOfDataMethodsVue,
   },
 
   data() {
@@ -98,6 +102,13 @@ export default {
       >
         Click To Chanage Name
       </button>
+
+      <!-- composition api  -->
+      <div style="border: 2px solid cyan; padding: 10px; margin: 10px 0px">
+        <AlternativeOfDataMethodsVue />
+      </div>
+
+      <!-- vue router  -->
       <div>
         <Developer
           :name="name"
@@ -111,10 +122,6 @@ export default {
         <div style="border: 2px solid palegreen; margin-top: 30px">
           <router-view></router-view>
         </div>
-        <!-- <Cricketer />
-        <Footballer />
-        <Contact />
-        <About /> -->
       </div>
     </div>
   </div>
