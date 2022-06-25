@@ -55,7 +55,7 @@ export default {
       "
     >
       <div>
-        <router-link to="/developer">Developer</router-link>
+        <router-link to="/developer/react-js">Developer</router-link>
       </div>
       <div>
         <router-link to="/cricketer">Cricketer</router-link>

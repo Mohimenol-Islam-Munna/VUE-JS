@@ -10,7 +10,7 @@ import About from "../src/components/About.vue";
 
 const routes = [
   {
-    path: "/developer",
+    path: "/developer/:type",
     component: Developer,
   },
   {
