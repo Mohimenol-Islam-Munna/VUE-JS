@@ -7,6 +7,7 @@ import Cricketer from "./components/Cricketer.vue";
 import Footballer from "./components/Footballer.vue";
 import Contact from "./components/Contact.vue";
 import About from "./components/About.vue";
+import ComputedAndWatch from "./components/ComputedAndWatch.vue";
 
 // composition api
 import AlternativeOfDataMethodsVue from "./components/compositionApi/AlternativeOfDataMethods.vue";
@@ -27,6 +28,7 @@ export default {
     Contact,
     About,
     AlternativeOfDataMethodsVue,
+    ComputedAndWatch,
   },
 
   data() {
@@ -124,5 +126,8 @@ export default {
         </div>
       </div>
     </div>
+
+    <!-- computed and watch porperty  -->
+    <ComputedAndWatch />
   </div>
 </template>
