@@ -53,7 +53,7 @@ export default {
 
 <template>
   <div>
-    <h2>Computed And Watch Property</h2>
+    <h2 class="title">Computed And Watch Property</h2>
 
     <h3>First Name : {{ firstName }}</h3>
 
@@ -85,7 +85,7 @@ export default {
         type="number"
         name="age"
         v-model="age"
-        placeholder="Enter your age" 
+        placeholder="Enter your age"
       /><br />
       <br />
       <button type="submit">Submit</button>
@@ -93,3 +93,10 @@ export default {
     </div>
   </div>
 </template>
+
+<style scoped>
+.title {
+  color: salmon;
+  font-size: 24px;
+}
+</style>
