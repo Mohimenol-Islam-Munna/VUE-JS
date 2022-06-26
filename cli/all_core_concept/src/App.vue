@@ -10,12 +10,11 @@ import About from "./components/About.vue";
 import ComputedAndWatch from "./components/ComputedAndWatch.vue";
 
 // composition api
-import AlternativeOfDataMethodsVue from "./components/compositionApi/AlternativeOfDataMethods.vue";
+import AlternativeOfDataMethods from "./components/compositionApi/AlternativeOfDataAndMethods.vue";
 
 export default {
   setup() {
     const store = useCounterStore();
-
     return {
       store,
     };
@@ -27,7 +26,7 @@ export default {
     Footballer,
     Contact,
     About,
-    AlternativeOfDataMethodsVue,
+    AlternativeOfDataMethods,
     ComputedAndWatch,
   },
 
@@ -107,7 +106,7 @@ export default {
 
       <!-- composition api  -->
       <div style="border: 2px solid cyan; padding: 10px; margin: 10px 0px">
-        <AlternativeOfDataMethodsVue />
+        <AlternativeOfDataMethods />
       </div>
 
       <!-- vue router  -->

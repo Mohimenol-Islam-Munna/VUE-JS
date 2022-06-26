@@ -8,6 +8,12 @@ export default {
     };
   },
 
+  watch: {
+    lastName(newValue, oldValue) {
+      console.log("watcher for last name :: ", newValue, "::", oldValue);
+    },
+  },
+
   methods: {
     firstNameHandler(event) {
       console.log("first name handler ::", event.target.value);
@@ -15,12 +21,13 @@ export default {
     },
 
     lastNameHandler(event) {
+      console.log("last name handler ::");
       console.log("last name handler ::", event.target.value);
       this.lastName = event.target.value;
     },
 
     fullNameHandler() {
-      console.log("full name handler ::");
+      // console.log("full name handler ::");
       this.fullName = this.firstName + " " + this.lastName;
       return this.fullName;
     },
@@ -31,8 +38,11 @@ export default {
 <template>
   <div>
     <h2>Computed And Watch Property</h2>
+
+    <h3>First Name : {{ firstName }}</h3>
+
     <h3>Full Name : {{ fullName }}</h3>
-    <h3>Full Name (method for data binding) : {{ fullNameHandler() }}</h3>
+    <h3>Full Name (Method for data binding) : {{ fullNameHandler() }}</h3>
 
     <div>
       <input
