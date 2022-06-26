@@ -12,7 +12,7 @@ export default {
     const player = reactive({ name: "Messi", jersy: 10 });
 
     const nameChangeHandler = () => {
-      console.log("nameChangeHandle ::");
+      console.log("nameChangeHandler ::");
       userName.value = "Md Mohimenol Islam";
     };
 
