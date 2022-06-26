@@ -9,7 +9,7 @@ export default {
       firstName: "Md Mohimenol",
       lastName: "Islam",
       fullName: "Munna",
-      age: 26,
+      age: null,
     };
   },
 
@@ -42,6 +42,11 @@ export default {
       console.log("age handler ::");
       this.age = event.target.value;
     },
+
+    resetAgeHandler() {
+      console.log("reset age handler called");
+      this.age = null;
+    },
   },
 };
 </script>
@@ -54,6 +59,8 @@ export default {
 
     <h3>Full Name : {{ fullName }}</h3>
     <h3>Full Name (Method for data binding) : {{ fullNameHandler }}</h3>
+
+    <h3>Age : {{ age }} years</h3>
 
     <div>
       <input
@@ -71,14 +78,18 @@ export default {
       /><br />
       <br />
 
+      <!-- :value="age"
+        @input="ageHandler" -->
+
       <input
         type="number"
         name="age"
-        @input="ageHandler"
-        placeholder="Enter your age"
+        v-model="age"
+        placeholder="Enter your age" 
       /><br />
       <br />
       <button type="submit">Submit</button>
+      <button type="button" @click="resetAgeHandler">Reset Age</button>
     </div>
   </div>
 </template>
