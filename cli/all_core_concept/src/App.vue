@@ -8,6 +8,7 @@ import Footballer from "./components/Footballer.vue";
 import Contact from "./components/Contact.vue";
 import About from "./components/About.vue";
 import ComputedAndWatch from "./components/ComputedAndWatch.vue";
+import RenderingList from "./components/RenderingList.vue";
 
 // composition api
 import AlternativeOfDataMethods from "./components/compositionApi/AlternativeOfDataAndMethods.vue";
@@ -28,6 +29,7 @@ export default {
     About,
     AlternativeOfDataMethods,
     ComputedAndWatch,
+    RenderingList,
   },
 
   data() {
@@ -88,6 +90,9 @@ export default {
         <router-link to="/about">About</router-link>
       </div>
     </header>
+
+    <!-- rendering list  -->
+    <RenderingList />
 
     <!-- content  -->
     <div>
