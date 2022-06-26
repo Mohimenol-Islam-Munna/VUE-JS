@@ -5,6 +5,7 @@ export default {
       firstName: "Md Mohimenol",
       lastName: "Islam",
       fullName: "Munna",
+      age: 26,
     };
   },
 
@@ -14,22 +15,28 @@ export default {
     },
   },
 
+  computed: {
+    fullNameHandler() {
+      console.log("full name handler ::");
+      this.fullName = this.firstName + " " + this.lastName;
+      return this.fullName;
+    },
+  },
+
   methods: {
     firstNameHandler(event) {
-      console.log("first name handler ::", event.target.value);
+      // console.log("first name handler ::", event.target.value);
       this.firstName = event.target.value;
     },
 
     lastNameHandler(event) {
-      console.log("last name handler ::");
-      console.log("last name handler ::", event.target.value);
+      // console.log("last name handler ::", event.target.value);
       this.lastName = event.target.value;
     },
 
-    fullNameHandler() {
-      // console.log("full name handler ::");
-      this.fullName = this.firstName + " " + this.lastName;
-      return this.fullName;
+    ageHandler(event) {
+      console.log("age handler ::");
+      this.age = event.target.value;
     },
   },
 };
@@ -42,7 +49,7 @@ export default {
     <h3>First Name : {{ firstName }}</h3>
 
     <h3>Full Name : {{ fullName }}</h3>
-    <h3>Full Name (Method for data binding) : {{ fullNameHandler() }}</h3>
+    <h3>Full Name (Method for data binding) : {{ fullNameHandler }}</h3>
 
     <div>
       <input
@@ -57,6 +64,14 @@ export default {
         name="lastName"
         @input="lastNameHandler"
         placeholder="Enter your last name"
+      /><br />
+      <br />
+
+      <input
+        type="number"
+        name="age"
+        @input="ageHandler"
+        placeholder="Enter your age"
       /><br />
       <br />
       <button type="submit">Submit</button>
