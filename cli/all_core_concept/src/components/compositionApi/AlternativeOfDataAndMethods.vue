@@ -3,7 +3,7 @@
 // reactive works for object only
 // when use ref then extra wrapper(called value) exist.
 
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, computed, watch } from "vue";
 
 export default {
   // composition api
@@ -22,9 +22,18 @@ export default {
       player.jersy = player.jersy + 5;
     };
 
+    // computed
     const methodForDataBinding = computed(() => {
       console.log("Method For Data Binding handler");
       return "Method For Data Binding Go" + `${player.jersy}`;
+    });
+
+    // watch
+    // first arg is/are dependencies
+    // second arg is the function
+    const methodOfWatch = watch(userName, (newValue, oldValue) => {
+      console.log("newValue :", newValue);
+      console.log("oldValue :", oldValue);
     });
 
     return {
@@ -33,6 +42,7 @@ export default {
       player,
       playerNameChangeHandler,
       methodForDataBinding,
+      methodOfWatch,
     };
   },
 
