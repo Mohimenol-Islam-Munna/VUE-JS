@@ -1,3 +1,7 @@
+<!-- 1. function in methods is used for data and event binding  -->
+<!-- 2. function in computed property is used only for data binding. its use like varible of data method -->
+<!-- 3. function in watch property does not used for data and event binding. It's used for only perform some task when the particular state is changed. -->
+
 <script>
 export default {
   data() {
